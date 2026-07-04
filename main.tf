@@ -1,5 +1,6 @@
 module "networking" {
-  source                = "../terraform_aws_vpc_auy1105_bpainemilla"
+  # Actualizado para apuntar a tu repo remoto de VPC
+  source                = "git::https://github.com/bapp86/VPC_EVA3_BPainemilla.git"
   vpc_name              = var.vpc_name
   vpc_cidr_block        = var.vpc_cidr_block
   subnet_a_name         = var.subnet_a_name
@@ -17,21 +18,23 @@ module "networking" {
 }
 
 module "compute" {
-  source                 = "../terraform_aws_ec2_auy1105_bpainemilla"
-  ssh_key_name           = var.ssh_key_name
-  ssh_key_filename       = var.ssh_key_filename
-  tls_key_bits           = var.tls_key_bits
-  ec2_instance_name      = var.ec2_instance_name
-  ec2_instance_type      = var.ec2_instance_type
-  ami_owner              = var.ami_owner
-  ami_name_filter        = var.ami_name_filter
-  ssh_connect_user       = var.ssh_connect_user
-  subnet_id              = module.networking.subnet_public_a_id
-#  vpc_security_group_ids = [module.networking.security_group_id]
+  # Actualizado para apuntar a tu repo remoto de EC2
+  source                = "git::https://github.com/bapp86/EC2_EVA3_BPainemilla.git"
+  ssh_key_name          = var.ssh_key_name
+  ssh_key_filename      = var.ssh_key_filename
+  tls_key_bits          = var.tls_key_bits
+  ec2_instance_name     = var.ec2_instance_name
+  ec2_instance_type     = var.ec2_instance_type
+  ami_owner             = var.ami_owner
+  ami_name_filter       = var.ami_name_filter
+  ssh_connect_user      = var.ssh_connect_user
+  subnet_id             = module.networking.subnet_public_a_id
+  # Nota: El Security Group fue desvinculado, por lo que esta línea permanece comentada
 }
 
 module "storage" {
-  source                  = "../terraform_aws_s3_auy1105_bpainemilla"
+  # Actualizado para apuntar a tu repo remoto de S3
+  source                  = "git::https://github.com/bapp86/S3_EVA3_BPainemilla.git"
   s3_bucket_name          = var.s3_bucket_name
   s3_bucket_is_public     = var.s3_bucket_is_public
   s3_force_destroy        = var.s3_force_destroy
