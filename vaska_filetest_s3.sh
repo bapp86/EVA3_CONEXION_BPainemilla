@@ -11,7 +11,7 @@ echo "Felicitaciones, este es un archivo de prueba en S3. Tu S3 esta funcionando
 # Paso 2: Sube el archivo a tu Bucket S3
 # IMPORTANTE: Asegurate de cambiar las 'xxxx' por el numero real de tu bucket en el comando de abajo
 echo "Subiendo 'prueba.txt' al bucket S3..."
-aws s3 cp prueba.txt s3://vampirenightxx-storage-bucket-xxxx/prueba.txt
+aws s3 cp prueba.txt s3://BRPainemilla-storage-bucket-xxxx/prueba.txt
 
 echo "======================================================"
 echo "Proceso finalizado. Verifica la URL publica en tu navegador!"

@@ -1,5 +1,5 @@
 module "networking" {
-  source                = "git::https://github.com/VampireNightXX/terraform-aws-vpc-auy1105-AVAUY1105Eva32026.git?ref=main"
+  source                = "../terraform_aws_vpc_auy1105_bpainemilla"
   vpc_name              = var.vpc_name
   vpc_cidr_block        = var.vpc_cidr_block
   subnet_a_name         = var.subnet_a_name
@@ -17,7 +17,7 @@ module "networking" {
 }
 
 module "compute" {
-  source                 = "git::https://github.com/VampireNightXX/terraform-aws-ec2-auy1105-AVAUY1105Eva32026.git?ref=main"
+  source                 = "../terraform_aws_ec2_auy1105_bpainemilla"
   ssh_key_name           = var.ssh_key_name
   ssh_key_filename       = var.ssh_key_filename
   tls_key_bits           = var.tls_key_bits
@@ -27,11 +27,11 @@ module "compute" {
   ami_name_filter        = var.ami_name_filter
   ssh_connect_user       = var.ssh_connect_user
   subnet_id              = module.networking.subnet_public_a_id
-  vpc_security_group_ids = [module.networking.security_group_id]
+#  vpc_security_group_ids = [module.networking.security_group_id]
 }
 
 module "storage" {
-  source                  = "git::https://github.com/VampireNightXX/terraform-aws-s3-auy1105-AVAUY1105Eva32026.git?ref=main"
+  source                  = "../terraform_aws_s3_auy1105_bpainemilla"
   s3_bucket_name          = var.s3_bucket_name
   s3_bucket_is_public     = var.s3_bucket_is_public
   s3_force_destroy        = var.s3_force_destroy

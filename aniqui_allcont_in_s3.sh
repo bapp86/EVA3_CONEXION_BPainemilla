@@ -4,7 +4,7 @@
 # CONFIGURACION - CONFIGURA TU BUCKET AQUI
 # ==============================================================================
 # IMPORTANTE: Reemplaza las 'xxxx' por la terminacion real de tu bucket AWS S3
-BUCKET="vampirenightxx-storage-bucket-xxxx"
+BUCKET="BRPainemilla-storage-bucket-xxxx"
 
 echo "======================================================================"
 echo "   SCRIPT DE ANIQUILACION ABSOLUTA DE CONTENIDO - AMAZON S3"

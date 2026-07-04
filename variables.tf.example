@@ -7,13 +7,37 @@ variable "aws_region" {
 variable "ssh_key_name" {
   description = "Nombre identificador de la llave SSH en la consola de AWS"
   type        = string
-  default     = "VampireNightXX-key"
+  default     = "BRPainemilla-key"
 }
 
 variable "ssh_key_filename" {
   description = "Nombre y ruta del archivo fisico .pem que se guardara localmente en Ubuntu"
   type        = string
-  default     = "VampireNightXX-key.pem"
+  default     = "BRPainemilla-key.pem"
+}
+
+variable "tls_key_bits" {
+  description = "Tamano en bits para la generacion de la llave privada RSA"
+  type        = number
+  default     = 4096
+}
+
+variable "aws_region" {
+  description = "Region geografica de AWS donde se desplegaran todos los recursos"
+  type        = string
+  default     = "us-east-1"
+}
+
+variable "ssh_key_name" {
+  description = "Nombre identificador de la llave SSH en la consola de AWS"
+  type        = string
+  default     = "BRPainemilla-key"
+}
+
+variable "ssh_key_filename" {
+  description = "Nombre y ruta del archivo fisico .pem que se guardara localmente en Ubuntu"
+  type        = string
+  default     = "BRPainemilla-key.pem"
 }
 
 variable "tls_key_bits" {
@@ -25,7 +49,7 @@ variable "tls_key_bits" {
 variable "vpc_name" {
   description = "Nombre asignado como etiqueta (Tag: Name) a la VPC"
   type        = string
-  default     = "VampireNightXX-vpc"
+  default     = "BRPainemilla-vpc"
 }
 
 variable "vpc_cidr_block" {
@@ -37,7 +61,7 @@ variable "vpc_cidr_block" {
 variable "subnet_a_name" {
   description = "Nombre asignado a la Subred Publica de la zona A"
   type        = string
-  default     = "VampireNightXX-subnet-a"
+  default     = "BRPainemilla-subnet-a"
 }
 
 variable "subnet_a_cidr" {
@@ -55,7 +79,7 @@ variable "subnet_a_az" {
 variable "subnet_b_name" {
   description = "Nombre asignado a la Subred Publica de la zona B"
   type        = string
-  default     = "VampireNightXX-subnet-b"
+  default     = "BRPainemilla-subnet-b"
 }
 
 variable "subnet_b_cidr" {
@@ -73,19 +97,19 @@ variable "subnet_b_az" {
 variable "internet_gateway_name" {
   description = "Nombre asignado al Internet Gateway"
   type        = string
-  default     = "VampireNightXX-igw"
+  default     = "BRPainemilla-igw"
 }
 
 variable "route_table_name" {
   description = "Nombre asignado a la Tabla de Enrutamiento Publica"
   type        = string
-  default     = "VampireNightXX-rt"
+  default     = "BRPainemilla-rt"
 }
 
 variable "security_group_name" {
   description = "Nombre asignado al Security Group"
   type        = string
-  default     = "VampireNightXX-sg"
+  default     = "BRPainemilla-sg"
 }
 
 variable "ssh_port" {
@@ -109,7 +133,7 @@ variable "allowed_cidr_blocks" {
 variable "ec2_instance_name" {
   description = "Nombre de la instancia de computo EC2 (Servidor Web)"
   type        = string
-  default     = "VampireNightXX-ec2"
+  default     = "BRPainemilla-ec2"
 }
 
 variable "ec2_instance_type" {
@@ -139,7 +163,7 @@ variable "ssh_connect_user" {
 variable "s3_bucket_name" {
   description = "Nombre UNICO GLOBAL para el bucket de S3"
   type        = string
-  default     = "vampirenightxx-storage-bucket-auy1105"
+  default     = "brpainemilla-storage-bucket-auy1105"
 }
 
 variable "s3_bucket_is_public" {
