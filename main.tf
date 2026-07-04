@@ -1,5 +1,4 @@
 module "networking" {
-  # Actualizado para apuntar a tu repo remoto de VPC
   source                = "git::https://github.com/bapp86/VPC_EVA3_BPainemilla.git"
   vpc_name              = var.vpc_name
   vpc_cidr_block        = var.vpc_cidr_block
@@ -18,7 +17,6 @@ module "networking" {
 }
 
 module "compute" {
-  # Actualizado para apuntar a tu repo remoto de EC2
   source                = "git::https://github.com/bapp86/EC2_EVA3_BPainemilla.git"
   ssh_key_name          = var.ssh_key_name
   ssh_key_filename      = var.ssh_key_filename
@@ -33,7 +31,6 @@ module "compute" {
 }
 
 module "storage" {
-  # Actualizado para apuntar a tu repo remoto de S3
   source                  = "git::https://github.com/bapp86/S3_EVA3_BPainemilla.git"
   s3_bucket_name          = var.s3_bucket_name
   s3_bucket_is_public     = var.s3_bucket_is_public
